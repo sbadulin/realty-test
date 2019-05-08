@@ -2,19 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
+import { ItemStyled, ItemThumbStyled, ItemTextWrapperStyled, ItemTextHeadingStyled, ItemTextInfoStyled } from './styled/ItemStyled'
+
 
 const Item = ({ sfid, name, thumbnail__c, title__c, city__c, state__c, price__c }) => (
-  <div style={{margin: '10px', cursor: 'pointer'}}>
-    <Link to={`property/${sfid}`}>
-    <div style={{ display: 'flex', flexDirection: 'row',     alignItems: 'center'}}>
-      <img style={{ maxWidth: '5.6rem', maxHeight: '5.6rem', marginRight: '10px'}} src={thumbnail__c} alt={name}/>
-      <div>
-        <div>{title__c}</div>
-        <div>{city__c}, {state__c} — ${price__c}</div>
-      </div>
-    </div>
-    </Link>
-  </div>
+  <Link to={`property/${sfid}`}>
+    <ItemStyled>
+        <ItemThumbStyled src={thumbnail__c} alt={name}/>
+        <ItemTextWrapperStyled>
+          <ItemTextHeadingStyled>{title__c}</ItemTextHeadingStyled>
+          <ItemTextInfoStyled>{city__c}, {state__c} — ${price__c}</ItemTextInfoStyled>
+        </ItemTextWrapperStyled>
+    </ItemStyled>
+  </Link>
 );
 
 Item.propTypes = {
