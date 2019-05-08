@@ -1,23 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const onPropertyCard = location => location.pathname.includes('property')
-
-const Header = ({ location, history }) => {
-  return onPropertyCard(location) ? (
-    <div>
-      <button onClick={history.goBack}>Back</button>
-      <span>Property</span>
-    </div>
-  ) : (
-    <span>Properties</span>
-  );
-}
+const Header = ({ title, showBackButton }) => 
+  <div>
+    {showBackButton && <Link to='/'>Back</Link>}
+    <span>{title}</span>
+  </div>
 
 Header.propTypes = {
-  location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  title: PropTypes.string,
+  showBackButton: PropTypes.bool,
 }
 
-export default withRouter(Header);
+export default Header;

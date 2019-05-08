@@ -5,10 +5,22 @@ import List from '../List/List';
 import Card from '../Card/Card';
 import Header from '../Header/Header';
 
-const AppRouter = () => <Router>
-  <Header />
-  <Route exact path="/" component={List} />
-  <Route path="/property/:sfid" component={Card} />
-</Router>
+const ListPage = () =>
+  <>
+    <Header title="Properties"/>
+    <List />
+  </>
+
+const CardPage = ({ match }) =>
+  <>
+    <Header title="Property" showBackButton />
+    <Card {...match} />
+  </>
+
+const AppRouter = () => 
+  <Router>
+    <Route exact path="/" component={ListPage} />
+    <Route path="/property/:sfid" component={CardPage} />
+  </Router>
 
 export default AppRouter

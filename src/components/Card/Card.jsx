@@ -3,25 +3,25 @@ import PropTypes from 'prop-types'
 
 import { DataContext } from '../../App';
 
-const CardContent = ({item}) =>
+const CardContent = ({ name, picture__c}) =>
   <div>
-    <div>{item.name}</div>
-    <div><img src={item.picture__c} width="100%" alt={item.name}/></div>
+    <div>{name}</div>
+    <div><img src={picture__c} width="100%" alt={name}/></div>
   </div>
 
-const Card = ({ match }) => 
+const Card = ({ params }) => 
   <DataContext.Consumer>
     {value => {
-      const filteredItems = value.data.filter(item => item.sfid === match.params.sfid);
+      const filteredItems = value.data.filter(item => item.sfid === params.sfid);
       let item = {};
       if (Array.isArray(filteredItems) && filteredItems.length > 0) item = filteredItems[0];
-      return <CardContent item={item}/>
+      return <CardContent {...item}/>
     }}
   </DataContext.Consumer>
 
 
 Card.propTypes = {
-  match: PropTypes.object
+  params: PropTypes.object
 }
 
 export default Card
