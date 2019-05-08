@@ -1,19 +1,8 @@
 import React, { useState, useEffect } from 'react'
+
 import AppRouter from './components/AppRouter/AppRouter';
-import { createGlobalStyle } from 'styled-components'
+import { GlobalStyle } from './utils/appUtils'
 
-const GlobalStyle = createGlobalStyle`
-  @import-normalize;
-
-  body {
-    margin: 0;
-    font-family: sans-serif;
-  }
-
-  a {
-    text-decoration: none;
-  }
-`
 export const DataContext = React.createContext({ data: [], isloading: false});
 
 const App = () => {
