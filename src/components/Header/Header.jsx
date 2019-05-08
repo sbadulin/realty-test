@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
+
+import { ReactComponent as ArrowIcon } from '../../arrow.svg';
+import { HeaderStyled, ButtonStyled } from './styled/HeaderStyled';
 
 const Header = ({ title, showBackButton }) => 
-  <div>
-    {showBackButton && <Link to='/'>Back</Link>}
+  <HeaderStyled>
+    {showBackButton && <ButtonStyled to='/'><ArrowIcon width="1em" height="1em" fill="#fff"/></ButtonStyled>}
     <span>{title}</span>
-  </div>
+  </HeaderStyled>
 
 Header.propTypes = {
   title: PropTypes.string,
