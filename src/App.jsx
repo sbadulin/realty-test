@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import AppRouter from './components/AppRouter/AppRouter';
+import { createGlobalStyle } from 'styled-components'
 
+const GlobalStyle = createGlobalStyle`
+  @import-normalize;
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+`
 export const DataContext = React.createContext({ data: [], isloading: false});
-
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -20,6 +32,7 @@ const App = () => {
 
   return (
     <DataContext.Provider value={{data, isLoading}}>
+      <GlobalStyle />
       <AppRouter />
     </DataContext.Provider>
   )};
