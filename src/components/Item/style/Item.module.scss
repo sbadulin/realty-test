@@ -1,5 +1,4 @@
 div.item {
-  padding: 10px;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -21,7 +20,8 @@ div.item {
 img.itemThumbnail {
   max-width: 5.6rem;
   max-height: 5.6rem;
-  margin-right: 10px;
+  padding: 10px;
+
 }
 
 div.itemTextWrapper {
