@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
-import AppRouter from './components/AppRouter/AppRouter';
-import { GlobalStyle } from './utils/appUtils'
+import AppRouter from "./components/AppRouter/AppRouter";
 
-export const DataContext = React.createContext({ data: [], isloading: false});
+export const DataContext = React.createContext({ data: [], isloading: false });
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -12,18 +11,18 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      const result = await import('./db/demoData.json');
-      setData(result.default)
-    }
+      const result = await import("./db/demoData.json");
+      setData(result.default);
+    };
     fetchData();
     setIsLoading(false);
   }, []);
 
   return (
-    <DataContext.Provider value={{data, isLoading}}>
-      <GlobalStyle />
+    <DataContext.Provider value={{ data, isLoading }}>
       <AppRouter />
     </DataContext.Provider>
-  )};
+  );
+};
 
-export default App
+export default App;

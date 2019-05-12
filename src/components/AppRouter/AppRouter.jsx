@@ -1,26 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./style/AppRouter.module.scss";
 
-import List from '../List/List';
-import Card from '../Card/Card';
-import Header from '../Header/Header';
+import Header from "../Header/Header";
+import Container from "../Container/Container";
 
-const ListPage = () =>
-  <>
-    <Header title="Properties"/>
-    <List />
-  </>
-
-const CardPage = ({ match }) =>
-  <>
-    <Header title="Property" showBackButton />
-    <Card {...match} />
-  </>
-
-const AppRouter = () => 
+const AppRouter = () => (
   <Router>
-    <Route exact path="/" component={ListPage} />
-    <Route path="/property/:sfid" component={CardPage} />
+    <Header />
+    <Container />
   </Router>
+);
 
-export default AppRouter
+export default AppRouter;

@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-export const ItemStyled = styled.div`
+div.item {
   padding: 10px;
   cursor: pointer;
   display: flex;
@@ -18,15 +16,15 @@ export const ItemStyled = styled.div`
     transition-duration: 100ms;
     color: initial;
   }
-`;
+}
 
-export const ItemThumbStyled = styled.img`
+img.itemThumbnail {
   max-width: 5.6rem;
   max-height: 5.6rem;
   margin-right: 10px;
-`;
+}
 
-export const ItemTextWrapperStyled = styled.div`
+div.itemTextWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,17 +32,17 @@ export const ItemTextWrapperStyled = styled.div`
   align-self: stretch;
   border-bottom: 1px solid #c8c7cc;
   font-family: sans-serif;
-`;
+}
 
-export const ItemTextHeadingStyled = styled.div`
-    margin: 0 0 2px;
-    font-size: 1rem;
-    font-weight: normal;
-`;
+div.itemTextHeading {
+  margin: 0 0 2px;
+  font-size: 1rem;
+  font-weight: normal;
+}
 
-export const ItemTextInfoStyled = styled.div`
-    margin: 0 0 2px;
-    font-size: 0.8rem;
-    line-height: normal;
-    color: #666;
-`;
+div.itemTextInfo {
+  margin: 0 0 2px;
+  font-size: 0.8rem;
+  line-height: normal;
+  color: #666;
+}
