@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { withItem } from "./hocs/withItem";
 import styles from "./style/BrokerInfo.module.scss";
 
 const BrokerInfo = ({ picture__c = "", name = "", title__c = "" }) => (
@@ -21,4 +22,4 @@ BrokerInfo.propTypes = {
   title__c: PropTypes.string
 };
 
-export default BrokerInfo;
+export default withItem(BrokerInfo);

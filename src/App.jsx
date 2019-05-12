@@ -2,24 +2,44 @@ import React, { useState, useEffect } from "react";
 
 import AppRouter from "./components/AppRouter/AppRouter";
 
-export const DataContext = React.createContext({ data: [], isloading: false });
+export const DataContext = React.createContext({
+  brokerData: [],
+  propertyData: [],
+  isPropertyLoading: false,
+  isBrokerLoading: false
+});
 
 const App = () => {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [propertyData, setPropertyData] = useState([]);
+  const [isPropertyLoading, setPropertyIsLoading] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      const result = await import("./db/demoData.json");
-      setData(result.default);
+    const fetchPropertyData = async () => {
+      setPropertyIsLoading(true);
+      const result = await import("./db/propertyData.json");
+      setPropertyData(result.default);
     };
-    fetchData();
-    setIsLoading(false);
+    fetchPropertyData();
+    setPropertyIsLoading(false);
+  }, []);
+
+  const [brokerData, setBrokerData] = useState([]);
+  const [isBrokerLoading, setIsBrokerLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchBrokerData = async () => {
+      setIsBrokerLoading(true);
+      const result = await import("./db/brokerData.json");
+      setBrokerData(result.default);
+    };
+    fetchBrokerData();
+    setIsBrokerLoading(false);
   }, []);
 
   return (
-    <DataContext.Provider value={{ data, isLoading }}>
+    <DataContext.Provider
+      value={{ propertyData, brokerData, isPropertyLoading, isBrokerLoading }}
+    >
       <AppRouter />
     </DataContext.Provider>
   );

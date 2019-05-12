@@ -9,6 +9,7 @@ const Card = ({
   name,
   baths__c,
   beds__c,
+  broker__c,
   description__c,
   picture__c,
   price__c
@@ -24,7 +25,7 @@ const Card = ({
       <div>Bathrooms: {baths__c}</div>
       <div>Asking Price: ${price__c}</div>
     </div>
-    <BrokerInfo />
+    <BrokerInfo {...{ broker__c }} />
     {/* <div className="social">
       <div className="favorite" />
       <div className="like" />

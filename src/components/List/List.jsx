@@ -6,13 +6,13 @@ import { ReactComponent as Loader } from "../../bars.svg";
 import styles from "./style/List.module.scss";
 
 const List = () => {
-  const { data, isLoading } = useContext(DataContext);
+  const { propertyData, isPropertyLoading } = useContext(DataContext);
   return (
     <div className={styles.list}>
-      {isLoading ? (
+      {isPropertyLoading ? (
         <Loader fill="black" />
       ) : (
-        data.map(item => <Item key={item.sfid} {...item} />)
+        propertyData.map(item => <Item key={item.sfid} {...item} />)
       )}
     </div>
   );
