@@ -1,8 +1,9 @@
-div.transition-group {
+div.transitionGroup {
   position: relative;
+  margin-top: calc(3em + 12px);
 }
 
-section.route-section {
+section.routeSection {
   position: absolute;
   width: 100%;
   top: 0;

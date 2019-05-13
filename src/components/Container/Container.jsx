@@ -4,12 +4,13 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import easeInClasses from "./style/transitions/easeIn.module.scss";
 import easeOutClasses from "./style/transitions/easeOut.module.scss";
+import styles from "./style/Container.module.scss";
 
 import List from "../List/List";
 import Card from "../Card/Card";
 
 const Container = ({ location }) => (
-  <div className={"transitionGroup"}>
+  <div className={styles.transitionGroup}>
     <TransitionGroup>
       <CSSTransition
         key={location.key}
