@@ -1,8 +1,10 @@
 :global {
   body {
-    margin: 0;
+    margin: 0 auto;
     font-family: sans-serif;
     overflow-x: hidden;
+    max-width: 800px;
+
   }
 
   a {
