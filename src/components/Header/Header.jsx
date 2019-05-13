@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 
-import { ReactComponent as ArrowIcon } from "../../arrow.svg";
+import { ReactComponent as ArrowIcon } from "../../images/arrow.svg";
 import styles from "./style/Header.module.scss";
 
 const checkLocation = path => {

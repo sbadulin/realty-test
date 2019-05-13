@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import { DataContext } from "../../App";
 import Item from "../Item/Item";
-import { ReactComponent as Loader } from "../../bars.svg";
+import { ReactComponent as Loader } from "../../images/bars.svg";
 import styles from "./style/List.module.scss";
 
 const List = () => {
