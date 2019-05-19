@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import AppRouter from "./components/AppRouter/AppRouter";
+import { auth } from './agent/agent'
 
 export const DataContext = React.createContext({
   brokerData: [],
@@ -14,6 +15,10 @@ const App = () => {
   const [isPropertyLoading, setPropertyIsLoading] = useState(false);
 
   useEffect(() => {
+    auth()
+  }, []);
+
+  useEffect(() => {
     const fetchPropertyData = async () => {
       setPropertyIsLoading(true);
       const result = await import("./db/propertyData.json");
@@ -23,7 +28,7 @@ const App = () => {
     setPropertyIsLoading(false);
   }, []);
 
-  const [brokerData, setBrokerData] = useState([]);
+  const [brokerData, setBrokerData] = useState([]); 
   const [isBrokerLoading, setIsBrokerLoading] = useState(false);
 
   useEffect(() => {
