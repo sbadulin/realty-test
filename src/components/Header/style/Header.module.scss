@@ -6,10 +6,11 @@ nav.header {
   height: 3em;
   color: #fff;
   font-weight: 600;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 100;
 }
 
 .button {
