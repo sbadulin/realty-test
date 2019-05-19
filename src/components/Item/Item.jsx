@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 import styles from "./style/Item.module.scss";
 
 const Item = ({
-  sfid,
-  name,
-  thumbnail__c,
-  title__c,
-  city__c,
-  state__c,
-  price__c
+  sfid = '',
+  name = '',
+  thumbnail__c = '',
+  title__c = '',
+  city__c = '',
+  state__c ='',
+  price__c = 0
 }) => (
   <Link to={`property/${sfid}`}>
     <div className={styles.item}>

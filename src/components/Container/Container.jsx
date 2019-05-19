@@ -6,21 +6,21 @@ import easeInClasses from "./style/transitions/easeIn.module.scss";
 import easeOutClasses from "./style/transitions/easeOut.module.scss";
 import styles from "./style/Container.module.scss";
 
-import List from "../List/List";
+import RealtyList from "../RealtyList/RealtyList";
 import Card from "../Card/Card";
 
 const Container = ({ location }) => (
-  <div className={styles.transitionGroup}>
-    <TransitionGroup>
+  <div className={styles.container}>
+    <TransitionGroup className={styles.transitionGroup}>
       <CSSTransition
         key={location.key}
         timeout={200}
-        classNames={location.pathname === "/" ? easeInClasses : easeOutClasses}
+        className={location.pathname === "/" ? easeInClasses : easeOutClasses}
         unmountOnExit
         mountOnEnter
       >
         <Switch location={location}>
-          <Route exact path="/" component={List} />
+          <Route exact path="/" component={RealtyList} />
           <Route path="/property/:sfid" component={Card} />
         </Switch>
       </CSSTransition>

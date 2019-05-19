@@ -1,11 +1,15 @@
 div.transitionGroup {
-  position: relative;
-  margin-top: 3em;
+    position: relative;
+    margin-top: 3em;
 }
 
-section.routeSection {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
+.container {
+  flex: 1;
 }
+
+// section.routeSection {
+//   position: absolute;
+//   width: 100%;
+//   top: 0;
+//   left: 0;
+// }

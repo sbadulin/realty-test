@@ -4,10 +4,17 @@
     font-family: sans-serif;
     overflow-x: hidden;
     max-width: 800px;
+    display: flex;
+    flex: 1;
 
   }
 
   a {
     text-decoration: none;
+  }
+
+  #root {
+    display: flex;
+    flex: 1;
   }
 }
